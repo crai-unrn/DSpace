@@ -54,19 +54,20 @@
 		var resultPath = "";
 		var firstNode = 1;
 		var pathSeparator = "::";
-		
-		
+		var subject = "";
+
 		while(node != null) {
 			if(firstNode == 1) {
 				resultPath = getTextValue(node);
-				firstNode = 0;
+                subject = resultPath;
+                firstNode = 0;
 			} else {
-				resultPath = getTextValue(node) + pathSeparator + resultPath;
+			    subject = resultPath.split('::').pop();
+                resultPath = getTextValue(node) + pathSeparator + resultPath;
 			}
 			node = getParentTextNode(node);
 		}
-		
-		window.opener.document.edit_metadata.<%=session.getAttribute("controlledvocabulary.ID")%>.value= resultPath;
+		window.opener.document.edit_metadata.<%=session.getAttribute("controlledvocabulary.ID")%>.value= subject;
 		
 		self.close();
 		return false;
