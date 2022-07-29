@@ -134,6 +134,10 @@
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='subject']/doc:element/doc:field[@name='value']">
 				<dc:subject><xsl:value-of select="." /></dc:subject>
 			</xsl:for-each>
+			<!-- dc.subject.materia -->
+			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='subject']/doc:element[@name='materia']/doc:element/doc:field[@name='value']">
+				<dc:subject><xsl:value-of select="." /></dc:subject>
+			</xsl:for-each>
 			<!-- dc.subject.* -->
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='subject']/doc:element/doc:element/doc:field[@name='value']">
 				<dc:subject><xsl:value-of select="." /></dc:subject>
