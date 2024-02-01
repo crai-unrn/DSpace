@@ -40,6 +40,8 @@
 		<name-map collection-handle="20.500.12049/295" form-name="digesto" /> <!-- SPYGE -->
 		<name-map collection-handle="20.500.12049/10885" form-name="digesto" /> <!-- SE-->
 		<name-map collection-handle="20.500.12049/10884" form-name="digesto" /> <!-- SDyVE-->
+		<name-map collection-handle="123456789/11242" form-name="digesto" /> <!-- SP-->
+
 
 		<!-- 4- Disposiciones de Sede -->
 		<!-- 4.1- Sede Alto Valle y Valle Medio -->
@@ -1224,6 +1226,18 @@
 			<pair>
 				<displayed-value>Secretaría de Investigación, Creación Artística, Desarrollo y Transferencia de Tecnología (I)</displayed-value>
 				<stored-value>Secretaría de Investigación, Creación Artística, Desarrollo y Transferencia de Tecnología (I)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Secretaría de Docencia y Vida Estudiantil (D)</displayed-value>
+				<stored-value>Secretaría de Docencia y Vida Estudiantil (D)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Secretaría de Extensión (E)</displayed-value>
+				<stored-value>Secretaría de Extensión (E)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Secretaría de Posgrado (X)</displayed-value>
+				<stored-value>Secretaría de Posgrado (X)</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Sede Atlántica (A)</displayed-value>
