@@ -61,18 +61,31 @@
 		<name-map collection-handle="20.500.12049/300" form-name="digesto" /> <!-- Vicerrectorales -->
 
 		<!-- 5- Resoluciones Consejo de Sede -->
-		<!-- 4.1- Sede Alto Valle y Valle Medio -->
+		<!-- 5.1- Sede Alto Valle y Valle Medio -->
 		<name-map collection-handle="20.500.12049/5312" form-name="digesto" /> <!-- SDEYVE -->
 		<name-map collection-handle="20.500.12049/5313" form-name="digesto" /> <!-- SICADYTT -->
 		<name-map collection-handle="20.500.12049/5314" form-name="digesto" /> <!-- SPYGE -->
-		<!-- 4.2- Sede Andina -->
+		<!-- 5.2- Sede Andina -->
 		<name-map collection-handle="20.500.12049/5309" form-name="digesto" /> <!-- SDEYVE -->
 		<name-map collection-handle="20.500.12049/5310" form-name="digesto" /> <!-- SICADYTT -->
 		<name-map collection-handle="20.500.12049/5311" form-name="digesto" /> <!-- SPYGE -->
-		<!-- 4.3 Sede Atlantica -->
+		<!-- 5.3 Sede Atlantica -->
 		<name-map collection-handle="20.500.12049/5306" form-name="digesto" /> <!-- SDEYVE -->
 		<name-map collection-handle="20.500.12049/5307" form-name="digesto" /> <!-- SICADYTT -->
 		<name-map collection-handle="20.500.12049/5308" form-name="digesto" /> <!-- SPYGE -->
+
+		<!-- 6. Convenios -->
+		<!-- 6.1 Convenios Rectorado-->
+		<name-map collection-handle="20.500.12049/11909" form-name="convenio" /> <!-- Especifico -->
+		<name-map collection-handle="20.500.12049/11910" form-name="convenio" /> <!-- Marco -->
+
+		<!-- 6.2 Convenios Sede AVVM-->
+		<name-map collection-handle="20.500.12049/11943" form-name="convenio" /> <!-- Especifico -->
+		<name-map collection-handle="20.500.12049/11942" form-name="convenio" /> <!-- Marco -->
+
+		<!-- 6.3 Convenios Atlantica -->
+		<name-map collection-handle="20.500.12049/11940" form-name="convenio" /> <!-- Especifico -->
+		<name-map collection-handle="20.500.12049/11939" form-name="convenio" /> <!-- Marco -->
 	</form-map>
 
 	<!-- The form-definitions map lays out the detailed definition of all the -->
@@ -689,6 +702,176 @@
 		</form>
 		<!-- ************* FIN: FORMULARIO TRADICIONAL ************* -->
 
+		<!-- ************* INICIO: FORMULARIO CONVENIO ************* -->
+		<form name="convenio">
+			<page number="1">
+				<!-- TIPO NORMATIVA-->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>type</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Tipo de normativa</label>
+					<input-type value-pairs-name="tipos_convenio">dropdown</input-type>
+					<hint>Seleccionar el tipo de convenio</hint>
+					<required>Debe seleccionar el tipo de convenio</required>
+				</field>
+				<!-- EMISOR -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier>author</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Emisor</label>
+					<input-type value-pairs-name="emisores_convenio">dropdown</input-type>
+					<hint>Seleccionar el órgano emisor del elemento</hint>
+					<required>Debe seleccionar el órgano emisor del elemento</required>
+				</field>
+				<!-- TITULO NORMATIVA -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>title</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Título</label>
+					<input-type>onebox</input-type>
+					<hint>Ingresar el título del convenio</hint>
+					<required>
+						Por favor ingrese un título. Si el convenio no lo posee, indicar la temática de forma general.
+						En caso de que incluya varias temáticas, indicar la del primer artículo, seguido de la
+						inscripción "y varios".
+					</required>
+				</field>
+				<!-- CODIGO -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>identifier</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Código</label>
+					<input-type>onebox</input-type>
+					<hint>
+						Ingresar el código del convenio usando el formato adecuado (emisor - año - número - tipo)
+					</hint>
+					<required>Debe ingresar un código de convenio</required>
+				</field>
+				<!-- FECHA EMISION -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>date</dc-element>
+					<dc-qualifier>issued</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Fecha de emisión</label>
+					<input-type>date</input-type>
+					<hint>
+						Indicar la fecha de la emisión del convenio. Puede ignorar los campos de día y/o mes si
+						no son aplicables.
+					</hint>
+					<required>Debe ingresar al menos el año de emisión</required>
+				</field>
+				<!-- FIRMA DIGITAL -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>description</dc-element>
+					<dc-qualifier>firmaDigital</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Firmado digitalmente</label>
+					<input-type value-pairs-name="boolean">dropdown</input-type>
+					<hint>Indicar si el documento contiene firma digital</hint>
+				</field>
+				<!-- EXPEDIENTE -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>identifier</dc-element>
+					<dc-qualifier>expediente</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Número de Expediente</label>
+					<input-type>onebox</input-type>
+					<hint>Ingresar el número de expediente del convenio (opcional)</hint>
+				</field>
+				<!-- DETALLE -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>description</dc-element>
+					<repeatable>false</repeatable>
+					<label>Detalle</label>
+					<input-type>textarea</input-type>
+					<hint>Ingresar una descripción para el elemento.</hint>
+				</field>
+				<!-- PALABRAS CLAVE -->
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>subject</dc-element>
+					<dc-qualifier>keyword</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Palabras clave</label>
+					<input-type>onebox</input-type>
+					<hint>
+						Ingresar palabras clave para el convenio. Ingresar al menos tres instancias de palabras clave.
+					</hint>
+					<required>Este campo es requerido</required>
+				</field>
+				<!-- ACCIONES: SUSTITUIR, INCORPORAR -->
+
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>relation</dc-element>
+					<dc-qualifier>sustituye</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Sustituye a</label>
+					<input-type>onebox</input-type>
+					<hint>Indicar el enlace permanente de los convenios sustituidos por la presente.</hint>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>relation</dc-element>
+					<dc-qualifier>sustituidapor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Es sustituida por</label>
+					<input-type>onebox</input-type>
+					<hint>Indicar el enlace permanente de los convenios que sustituyen a la presente.</hint>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>relation</dc-element>
+					<dc-qualifier>incorpora</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Incorpora a</label>
+					<input-type>onebox</input-type>
+					<hint>Indicar el enlace permanente de los convenios ampliados por la presente.</hint>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>relation</dc-element>
+					<dc-qualifier>incorporadapor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Es incorporada por</label>
+					<input-type>onebox</input-type>
+					<hint>Indicar el enlace permanente de los convenios que amplían a la presente.</hint>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>description</dc-element>
+					<dc-qualifier>prorroga</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Prórroga</label>
+					<input-type value-pairs-name="tipos_prorroga">dropdown</input-type>
+					<hint>Seleccionar el tipo de prórroga</hint>
+					<required>Debe seleccionar el tipo de prórroga</required>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>description</dc-element>
+					<dc-qualifier>duration</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Duración</label>
+					<input-type>onebox</input-type>
+					<hint>Debe indicar la duración</hint>
+				</field>
+			</page>
+		</form>
+		<!-- ************* FIN: FORMULARIO CONVENIO ************* -->
+
 		<!-- ************* INICIO: FORMULARIO DIGESTO ************* -->
 		<form name="digesto">
 			<page number="1">
@@ -760,6 +943,7 @@
 				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>description</dc-element>
+					<dc-qualifier>firmaDigital</dc-qualifier>
 					<dc-qualifier>firmaDigital</dc-qualifier>
 					<repeatable>false</repeatable>
 					<label>Firmado digitalmente</label>
@@ -1337,6 +1521,30 @@
 			</pair>
 		</value-pairs>
 
+		<!-- Emisores de formulario Digesto para convenios -->
+		<value-pairs value-pairs-name="emisores_convenio" dc-term="creator">
+			<pair>
+				<displayed-value>Rector (R)</displayed-value>
+				<stored-value>Rector (R)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Universidad Nacional de Río Negro (U)</displayed-value>
+				<stored-value>Universidad Nacional de Río Negro (U)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Sede Atlántica (A)</displayed-value>
+				<stored-value>Sede Atlántica (A)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Sede Andina (B)</displayed-value>
+				<stored-value>Sede Andina (B)</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Sede Alto Valle y Valle Medio (C)</displayed-value>
+				<stored-value>Sede Alto Valle y Valle Medio (C)</stored-value>
+			</pair>
+		</value-pairs>
+
 		<!-- Tipos de Normativa -->
 		<value-pairs value-pairs-name="tipos_normativa" dc-term="subject">
 			<pair>
@@ -1350,6 +1558,34 @@
 			<pair>
 				<displayed-value>Disposición</displayed-value>
 				<stored-value>Disposición</stored-value>
+			</pair>
+		</value-pairs>
+
+		<!-- Tipos de Prorroga -->
+		<value-pairs value-pairs-name="tipos_prorroga" dc-term="subject">
+			<pair>
+				<displayed-value>Automática</displayed-value>
+				<stored-value>Automatica</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Por Acuerdo de Partes</displayed-value>
+				<stored-value>Por_acuerdo_de_partes</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>No establece</displayed-value>
+				<stored-value>No_establece</stored-value>
+			</pair>
+		</value-pairs>
+
+		<!-- Tipos de Normativa -->
+		<value-pairs value-pairs-name="tipos_convenio" dc-term="subject">
+			<pair>
+				<displayed-value>Convenio específico</displayed-value>
+				<stored-value>Convenio_específico</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Convenio marco</displayed-value>
+				<stored-value>Convenio_marco</stored-value>
 			</pair>
 		</value-pairs>
 
