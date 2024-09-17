@@ -69,6 +69,19 @@
     <name-map collection-handle="20.500.12049/5306" submission-name="digesto" /> <!-- SDEYVE -->
     <name-map collection-handle="20.500.12049/5307" submission-name="digesto" /> <!-- SICADYTT -->
     <name-map collection-handle="20.500.12049/5308" submission-name="digesto" /> <!-- SPYGE -->
+
+    <!-- 6. Convenios -->
+    <!-- 6.1 Convenios Rectorado-->
+    <name-map collection-handle="20.500.12049/11909" submission-name="digesto" /> <!-- Especifico -->
+    <name-map collection-handle="20.500.12049/11910" submission-name="digesto" /> <!-- Marco -->
+
+    <!-- 6.2 Convenios Sede AVVM-->
+    <name-map collection-handle="20.500.12049/11943" submission-name="digesto" /> <!-- Especifico -->
+    <name-map collection-handle="20.500.12049/11942" submission-name="digesto" /> <!-- Marco -->
+
+    <!-- 6.3 Convenios Atlantica -->
+    <name-map collection-handle="20.500.12049/11940" submission-name="digesto" /> <!-- Especifico -->
+    <name-map collection-handle="20.500.12049/11939" submission-name="digesto" /> <!-- Marco -->
   </submission-map>
 
   <!-- The 'step-definitions' allows you to define steps which you may wish -->
